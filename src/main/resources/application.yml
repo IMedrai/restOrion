@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/Orion?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    hikari:
+      connectionTimeout: 30000
+      maxLifetime: 900000
+      maximumPoolSize: 10
+      minimumIdle: 10
+      poolName: DEV-Pool
+      connectionTestQuery: select 1
+      autoCommit: false
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    open-in-view: false
+
